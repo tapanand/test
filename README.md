@@ -14,7 +14,13 @@ When you're finished with the assessment, please send us an email with a link to
 
 ## Application
 
-The purpose of this exercise is to build an application based on the provided mockups and requirements below:
+The purpose of this exercise is to build an application based on the provided mockups and requirements below.
+You may choose to use Angular, Vue, React, Svelte or Stencil.
+Brownie points if you choose Svelte or Stencil. :)
+
+### Should I include tests?
+
+It's up to you depending on what you consider "done" and the amount of time you have at your disposal.
 
 ### Quiz App
 
