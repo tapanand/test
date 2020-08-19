@@ -6,6 +6,12 @@ This README details what we expect from you on this assessment. If you have any 
 
 Please, use this repository to fork the project into your account and submit the link to us (by email) with the final solution when done.
 
+We appreciate that you are spending your valuable personal time on this. This task should take two to three hours, however you can spend as long as you wish on it.
+
+Please don't feel you need to have a perfect solution - one that works is enough! We look forward to receiving this back from you within 5 days - if you need more time, please let us know.
+
+When you're finished with the assessment, please send us an email with a link to your solution.
+
 ## Application
 
 The purpose of this exercise is to build an application based on the provided mockups and requirements below:
@@ -16,18 +22,17 @@ The application is a Quiz interface - a UI that shows a set of questions and let
 
 The Quiz features three different types of questions. Use the included mockups as references for styling.
 
-**Multiple**   
+**Multiple**  
 A multiple-choice question (predefined answer options)
 
 ![](./mockups/multiple.png)
 
-
-**Boolean**   
+**Boolean**  
 A "true or false" only answer question
 
 ![](./mockups/boolean.png)
 
-**Text**   
+**Text**  
 An open-ended text question
 
 ![](./mockups/text.png)
@@ -36,8 +41,8 @@ An open-ended text question
 
 1. The UI should fetch the questions data from an API (provided in this repository). More details in [API instructions](#api-instructions)
 
-2. The application should display one question per time, randomly selected from the set of questions.  
-   
+2. The application should display one question per time, randomly selected from the set of questions. It should display at least 5 questions.
+
 3. When the user finishes the Quiz, the UI should display a summary page with the results, including:
 
 - Number of correct answers
