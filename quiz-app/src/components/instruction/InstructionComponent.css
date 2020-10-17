@@ -1,0 +1,36 @@
+.instruction {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  text-align: left;
+  padding: 2rem;
+}
+
+.question-type {
+  list-style: none;
+  list-style-type: lower-alpha;
+}
+
+span.head {
+  font-size: 14px;
+}
+
+span.desc {
+  font-size: 12px;
+}
+
+.easy {
+  color: #51a251;
+}
+
+.medium {
+  color: #5366f5;
+}
+
+.hard {
+  color: #001cef;
+}
+
+.proceed {
+  text-align: center;
+}
