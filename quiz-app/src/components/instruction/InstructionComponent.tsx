@@ -1,22 +1,11 @@
 import React, { Component } from 'react';
 
 import './InstructionComponent.css';
-import Button from "react-bootstrap/Button";
 import {
     Link,
-    Route,
 } from "react-router-dom";
 
-class InstructionComponent extends Component<{}, {}> {
-    constructor(props: any) {
-        super(props);
-    }
-
-    goToQuiz = () => {
-        window.location.href = '/quiz';
-
-    }
-
+class InstructionComponent extends Component<object, object> {
     render() {
         return (
             <div className="instruction">

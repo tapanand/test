@@ -6,7 +6,7 @@ import { RouteComponentProps } from 'react-router-dom';
 
 import IQuestion from "../../models/IQuestion";
 import { IAppState } from "../../store/app/IAppState";
-import { fetchQuestionList, updateIndex, toggleAnswer } from "../../store/questions/Actions";
+import { fetchQuestionList, updateIndex } from "../../store/questions/Actions";
 import { shuffleOptions } from "../../GenerateRandoms";
 
 import Question from '../questions/Question';
@@ -23,7 +23,7 @@ interface IQuestionListProps extends RouteComponentProps {
 
 
 class ConnectedQuizComponent extends PureComponent<IQuestionListProps, object> {
-    constructor(props: any) {
+    constructor(props: IQuestionListProps) {
         super(props);
         this.handleNextQuestion = this.handleNextQuestion.bind(this);
         this.handleOnchange = this.handleOnchange.bind(this);
@@ -37,11 +37,11 @@ class ConnectedQuizComponent extends PureComponent<IQuestionListProps, object> {
         e.preventDefault();
         const reachedLast = this.props.isLastQuestion;
 
-        if (reachedLast == 0) {
+        if (reachedLast === 0) {
             this.props.updateIndex();
         }
 
-        if (reachedLast == 1) {
+        if (reachedLast === 1) {
             this.props.history.push('result', { questions: this.props.questions });
         }
 
@@ -79,7 +79,7 @@ class ConnectedQuizComponent extends PureComponent<IQuestionListProps, object> {
 
     renderButton() {
         const reachedLast = this.props.isLastQuestion;
-        if (reachedLast == 0) {
+        if (reachedLast === 0) {
             return (
                 <Button variant="primary" type="submit" >
                     Next
@@ -98,7 +98,7 @@ class ConnectedQuizComponent extends PureComponent<IQuestionListProps, object> {
 
 
     render() {
-        const { questions, currentQuestionIndex, isLastQuestion } = this.props;
+        const { questions, currentQuestionIndex } = this.props;
         const question: IQuestion = questions[currentQuestionIndex];
         return (
 
@@ -137,7 +137,6 @@ const mapDispatchToProps = (dispatch: any) => {
     return {
         fetchQuestionList: () => dispatch(fetchQuestionList()),
         updateIndex: () => dispatch(updateIndex()),
-        toggleAnswer: () => dispatch(toggleAnswer()),
     };
 }
 

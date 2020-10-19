@@ -21,19 +21,19 @@ const questionsReducer: Reducer<IQuestionsState, Action> = (
             return {
                 ...state,
                 questions: action.payload,
+                currentQuestion: null,
+                currentQuestionIndex: 0,
+                currentQuestionAnswer: '',
+                isLastQuestion: 0,
+                isAnswered: false
             }
         case actionTypes.UPDATE_INDEX:
             const len = state.questions.length - 1;
             const idx = state.currentQuestionIndex;
             return {
                 ...state,
-                isLastQuestion: (len == idx + 1) ? 1 : 0,
+                isLastQuestion: (len === idx + 1) ? 1 : 0,
                 currentQuestionIndex: (len > idx) ? idx + 1 : idx
-            }
-        case actionTypes.TOGGLE_ANSWERED:
-            return {
-                ...state,
-                isAnswered: !state.isAnswered
             }
         default:
             return state;

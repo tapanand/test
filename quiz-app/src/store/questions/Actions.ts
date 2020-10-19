@@ -3,11 +3,8 @@ import fetchQuestions from '../../services/QuestionsApi';
 
 export enum actionTypes {
     LOAD_QUIZ = 'LOAD_QUIZ',
-    CLEAR_CURRENT_QUIZ = 'CLEAR_CURRENT_QUIZ',
-    LOAD_NEXT_QUESTION = 'LOAD_NEXT_QUESTION',
-    SAVE_CURRENT_QUESTION = 'SAVE_CURRENT_QUESTION',
-    UPDATE_INDEX = 'UPDATE_INDEX',
-    TOGGLE_ANSWERED = 'TOGGLE_ANSWERED'
+    RESET_QUIZ = 'RESET_QUIZ',
+    UPDATE_INDEX = 'UPDATE_INDEX'
 }
 
 type PromiseAction = Promise<ILoadQuestionsAction>
@@ -15,15 +12,13 @@ type ThunkAction = (dispatch: Dispatch) => any
 type Dispatch = (action:
     ILoadQuestionsAction |
     IUpdateIndexAction |
-    IToggleAnswerAction |
     ThunkAction |
     PromiseAction
 ) => any
 
 export type Action =
     | ILoadQuestionsAction
-    | IUpdateIndexAction
-    | IToggleAnswerAction;
+    | IUpdateIndexAction;
 
 interface ILoadQuestionsAction {
     type: actionTypes.LOAD_QUIZ;
@@ -60,22 +55,6 @@ export function updateIndex(): ThunkAction {
         dispatch(updateIndexAction());
     }
 }
-
-interface IToggleAnswerAction {
-    type: actionTypes.TOGGLE_ANSWERED;
-}
-const toggleAnswerAction = (): Action => {
-    return {
-        type: actionTypes.TOGGLE_ANSWERED,
-    }
-};
-
-export function toggleAnswer(): ThunkAction {
-    return (dispatch: Dispatch) => {
-        dispatch(toggleAnswerAction());
-    }
-}
-
 
 
 
