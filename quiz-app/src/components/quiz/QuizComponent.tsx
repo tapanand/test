@@ -104,6 +104,10 @@ class ConnectedQuizComponent extends PureComponent<IQuestionListProps, object> {
 
             <div className="quiz-container">
                 <Form className={`quiz ${ question && question.difficulty }`} key={currentQuestionIndex} onSubmit={this.handleNextQuestion} name='quizeForm' id='quizeForm'>
+                    <div className="quiz-meta">
+                        <span><h1>Question</h1></span>
+                        <span className="badge badge-primary"> {this.props.currentQuestionIndex + 1} of {this.props.questions.length}</span>
+                    </div>
                     <Form.Group>
                         <Form.Text className="text-muted">
                             {question && <Question {...question} />}
