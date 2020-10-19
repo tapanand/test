@@ -9,6 +9,7 @@ class InstructionComponent extends Component<object, object> {
     render() {
         return (
             <div className="instruction">
+                <h1>Instructions</h1>
                 <p>Quiz contains a set of questions and lets the you select an answer for each one. The Quiz features three different types of questions.</p>
                 <ul className="question-type">
                     <li> <span className="head"> Multiple: </span> <span className="desc">A multiple-choice question (predefined answer options)</span></li>
