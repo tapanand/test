@@ -3,6 +3,9 @@
   line-height: 7px;
   margin-top: 3vh;
 }
+.summary p {
+  margin-bottom: 1rem;
+}
 
 .row {
   margin-left: 0;

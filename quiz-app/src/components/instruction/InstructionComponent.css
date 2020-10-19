@@ -11,6 +11,9 @@
   list-style-type: lower-alpha;
 }
 
+p {
+  margin: 0;
+}
 span.head {
   font-size: 14px;
 }
